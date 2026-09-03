@@ -1890,7 +1890,8 @@
       id="global-bg-video" 
       autoplay 
       loop 
-      muted 
+      muted
+      webkit-playsinline
       playsinline
       preload="auto"
     >
@@ -2994,6 +2995,22 @@
           requestAnimationFrame(drawPetals);
         }
         drawPetals();
+      }
+
+      /* --------------------------------------------------------------------------
+         11. BACKGROUND VIDEO AUTOPLAY ASSURANCE
+         -------------------------------------------------------------------------- */
+      const globalVideo = document.getElementById('global-bg-video');
+      if (globalVideo) {
+        globalVideo.muted = true;
+        const playGlobalVideo = function () {
+          globalVideo.play().catch(function (e) {
+            console.warn('Background video play notification:', e);
+          });
+        };
+        playGlobalVideo();
+        document.addEventListener('touchstart', playGlobalVideo, { once: true });
+        document.addEventListener('click', playGlobalVideo, { once: true });
       }
 
     })();
