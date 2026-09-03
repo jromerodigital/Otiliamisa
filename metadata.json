@@ -1,0 +1,6 @@
+{
+  "name": "Misa de Honras - Otilia Inga Cueva",
+  "description": "Invitación digital elegante y respetuosa para la misa de honras de 1 mes de Otilia Inga Cueva con música, dedicatoria, galería y confirmación.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
